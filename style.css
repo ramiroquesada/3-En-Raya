@@ -2,6 +2,8 @@
   --gwidth: 96vw;
 
   --sqHeight: calc(var(--gwidth) / 3);
+
+  --mark-size: calc(var(--sqHeight) * 0.9);
 }
 body {
   background: red;
@@ -20,24 +22,29 @@ body {
   max-width: 800px;
   max-height: 800px;
   border: 0px auto white;
+
+  color: white;
 }
 
 .gameboardSquare {
   height: var(--sqHeight);
   max-height: 250px;
-  border: 2px solid rgba(255, 255, 255, 0.5);  
+  border: 2px solid rgba(255, 255, 255, 0.5);
   padding: 1rem;
   margin: 0.15rem;
   cursor: pointer;
 
-  /* From https://css.glass */
-background: rgba(255, 255, 255, 0.15);
-background-color: rgba(255,255,255,0.2);
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-filter: blur(1px);
--webkit-backdrop-filter: blur(5px);
-backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.33);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  filter: blur(1px);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 
+
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .square-top {
@@ -70,6 +77,54 @@ backdrop-filter: blur(5px);
   border-radius: 0rem 0rem 0rem 2rem;
 }
 
+
+
+.mark{
+  object-fit: cover;
+  width: (--mark-size);
+  height: 100%;
+  background-color: transparent;
+  filter: brightness(0.9);
+  
+}
+
+.gameboardSquare:has(.mark){
+  cursor: not-allowed;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* customizable snowflake styling */
 .snowflake {
   color: rgb(255, 255, 255);
@@ -85,7 +140,6 @@ backdrop-filter: blur(5px);
   }
   100% {
     top: 100%;
-
   }
 }
 @-webkit-keyframes snowflakes-shake {
@@ -124,7 +178,6 @@ backdrop-filter: blur(5px);
   100% {
     transform: translateX(0px);
     opacity: 0.25;
-    
   }
 }
 .snowflake {
@@ -146,10 +199,6 @@ backdrop-filter: blur(5px);
   animation-timing-function: linear, ease-in-out;
   animation-iteration-count: infinite, infinite;
   animation-play-state: running, running;
-  
-
-
-
 }
 .snowflake:nth-of-type(0) {
   left: 1%;
