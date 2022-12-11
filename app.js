@@ -1,5 +1,5 @@
 //Elementos del DOM
-const cellElements = document.querySelectorAll("[data-cell]");
+
 const X_CLASS = "x";
 const CIRCLE_CLASS = "circle";
 const WINNING_COMBINATIONS = [
@@ -13,6 +13,8 @@ const WINNING_COMBINATIONS = [
   [2, 4, 6],
 ];
 
+const cellElements = document.querySelectorAll("[data-cell]");
+
 let winningMessageTextElement = document.querySelector(
   "[data-winning-message-text]"
 );
@@ -20,11 +22,23 @@ let winningMessageElement = document.getElementById("winningMessage");
 
 let restartButton = document.getElementById("restartButton");
 
+let jugarButton = document.getElementById('jugar');
+
+let player1Name = document.getElementById('name1');
+let player2Name = document.getElementById('name2');
+
+
+let startingMessageElement = document.getElementById('startingMessage');
+
+
+
 let circleTurn;
 
 startGame();
 
 restartButton.addEventListener("click", startGame);
+
+
 
 //Event listener para las celdas
 
@@ -82,6 +96,7 @@ function handleClick(e) {
 let placeMark = (cell, currentCLass) => {
   let newImg = document.createElement("img");
   newImg.classList.add("mark");
+
   cell.classList.add(currentCLass);
 
   if (currentCLass == CIRCLE_CLASS) {

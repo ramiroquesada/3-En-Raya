@@ -1,14 +1,60 @@
 :root {
-  --gwidth: 96vw;
+  --gwidth: 90vw;
 
   --sqHeight: calc(var(--gwidth) / 3);
 
   --mark-size: calc(var(--sqHeight) * 0.9);
 }
 body {
-  background: red;
+  font-family: 'Mountains of Christmas', cursive;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: rgb(255,0,0);
+background: -moz-linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(255,120,120,1) 100%);
+background: -webkit-linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(255,120,120,1) 100%);
+background: linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(255,120,120,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000",endColorstr="#ff7878",GradientType=1);
 }
+
+
+.header{
+  height: 90px;
+  background-image: url('./imgs/green.jpg') ;
+  border-bottom: 1px white solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  
+  
+}
+
+.header .headerText{
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 2rem;
+    
+}
+
+.noSeleccionable{
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+
+.noDrag{
+  -webkit-user-drag: none;
+  user-drag: none;  
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+
+
 
 .main {
   display: flex;
@@ -21,7 +67,7 @@ body {
   width: var(--gwidth);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  max-width: 640px;
+  max-width: 500px;
 
   border: 0px auto white;
 
@@ -30,7 +76,7 @@ body {
 
 .gameboardSquare {
   height: var(--sqHeight);
-  max-height: 200px;
+  max-height: 160px;
   border: 2px solid rgba(255, 255, 255, 0.5);
 
   margin: 0.15rem;
@@ -82,6 +128,13 @@ body {
   background-color: transparent;
   filter: brightness(0.9);
   animation: mark 0.4s;
+  user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
 }
 
 .gameboardSquare:has(.mark) {
@@ -245,13 +298,34 @@ body {
   align-items: center;
   color: white;
   font-size: 5rem;
-  gap: 2rem;
+  gap: 4rem;
   display: none;
 }
 
 .winning-message button {
   font-size: 3rem;
 }
+
+.starting-message{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  padding: 1rem;
+  display: none;
+
+}
+
+
+
+
 
 .show {
   display: flex;
