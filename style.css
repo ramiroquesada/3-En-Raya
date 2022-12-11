@@ -85,12 +85,28 @@ justify-content: center;
   height: 100%;
   background-color: transparent;
   filter: brightness(0.9);
+  animation: mark 0.4s ;
   
 }
 
 .gameboardSquare:has(.mark){
   cursor: not-allowed;
   
+}
+
+
+@keyframes mark{
+  from{opacity: 0;
+    rotate: -25deg;
+    
+}
+
+  to{opacity: 0.5;
+    rotate: 10deg;
+  
+  }
+  to{opacity: 1;
+    rotate: 0deg;}
 }
 
 
