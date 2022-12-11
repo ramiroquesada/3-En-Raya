@@ -85,10 +85,10 @@ let placeMark = (cell, currentCLass) => {
   cell.classList.add(currentCLass);
 
   if (currentCLass == CIRCLE_CLASS) {
-    newImg.setAttribute("src", "/imgs/circle.png");
+    newImg.setAttribute("src", "./imgs/circle.png");
     cell.append(newImg);
   } else {
-    newImg.setAttribute("src", "/imgs/candy.png");
+    newImg.setAttribute("src", "./imgs/candy.png");
     cell.append(newImg);
   }
 };
