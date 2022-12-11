@@ -250,3 +250,34 @@ justify-content: center;
   -webkit-animation-delay: 3s, 1.5s;
   animation-delay: 3s, 1.5s;
 }
+
+
+
+
+
+/* WINNING MESSAGE - RESTART BUTTON*/
+
+.winning-message{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+ 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 5rem;
+  gap: 2rem;
+  display: none;
+}
+
+.winning-message button{
+  font-size: 3rem;
+}
+
+.show{
+  display: flex;
+}
